@@ -1,9 +1,7 @@
 <!-- _form.html.erb -->
-<%= form_for(task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_area :details %>
+<%= simple_form_for(task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details, as: :text %>
   <%= f.check_box :complete unless task.new_record? %>
-  <%= f.submit %>
+  <p> <%= f.button :submit %> </p>
 <% end %>
