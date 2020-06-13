@@ -1,0 +1,10 @@
+<!-- index.html.erb -->
+<h1>Tasks list</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.complete ? 'Completed' : 'Unfinished' %> - <%= link_to(task.title, task_path(task)) %> - <%= link_to 'D', task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+
+<%= link_to('Add task', new_task_path) %>
