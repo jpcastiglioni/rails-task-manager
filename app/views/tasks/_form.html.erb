@@ -4,6 +4,6 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_area :details %>
-  <%= f.check_box :complete %>
+  <%= f.check_box :complete unless task.new_record? %>
   <%= f.submit %>
 <% end %>
